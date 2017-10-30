@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def get_total_cost_of_meal():
     # original meal price
     meal_cost = float(input())
