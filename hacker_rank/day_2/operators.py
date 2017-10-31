@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.6
+
 def get_total_cost_of_meal():
     # original meal price
     meal_cost = float(input())
