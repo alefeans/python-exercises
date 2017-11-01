@@ -1,6 +1,7 @@
 #!/usr/bin/python3.6
 import sys
 
+# Valida se a quantidade de testes está ok (1 até 10 testes)
 def getEntry():
     t = int(input().strip())
     if (t < 1) and (t > 10):
@@ -8,31 +9,33 @@ def getEntry():
     else:
         return t
 
-def getStrings(t):
+# Valida se a string informada possui o tamanho correto (2 até 10000)
+def getStrings():
     s = input().strip()
     if (len(s) < 2) and (len(s) > 10000):
         sys.exit(1)
     else:
         return s
 
+# Faz uma iteração na string informada, incluindo os caracteres pares na "lista" par
+# (even) e os caracteres ímpares na "lista" impar (odd). Ao final, inclui a "lista" par
+# no índice 0 e inclui a "lista" impar no índice 1 da "lista" final.
 def splitString(s):
-    test = list(s)
-    lista_par = ""
-    lista_impar = ""
+    even = ""
+    odd = ""
     for i in range(0, len(s)):
         if (i % 2 == 0):
-            lista_par += s[i]
+            even += s[i]
         else:
-            lista_impar += s[i]
-    lista_final = lista_par, lista_impar
-    return lista_final
+            odd += s[i]
+    final = even, odd
+    return final
 
-def showMessage(lista_final):
-    print(lista_final[0], lista_final[1])
+def main():
+    t = getEntry()
+    for i in range(0, t):
+        s = getStrings()
+        final = splitString(s)
+        print(final[0], final[1])
 
-
-t = getEntry()
-for i in range(0, t):
-    s = getStrings(t)
-    lista_final = splitString(s)
-    showMessage(lista_final)
+main()
