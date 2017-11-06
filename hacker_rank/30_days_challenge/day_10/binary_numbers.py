@@ -1,0 +1,32 @@
+#!/usr/bin/python3.6
+import sys
+
+def get_entry():
+    n = int(input().strip())
+    if (n < 0) and (n > 10**6):
+        sys.exit(1)
+    else:
+        return n
+
+def dec_to_bin(n):
+    binary = bin(n).split('0b')
+    return binary[1]
+
+def counting_bin(binary):
+    total = 1
+    lista = []
+    test = list(map(int, binary))
+    for i in range(0, len(test) - 1):
+        if (test[i] == 1) and (test[i+1] == 1):
+            total += 1
+            lista.append(total)
+        else:
+            total = 1
+            lista.append(total)
+    print(max(lista))
+
+def main():
+    n = get_entry()
+    binary = dec_to_bin(n)
+    counting_bin(binary)
+main()
