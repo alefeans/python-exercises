@@ -36,6 +36,5 @@ def main():
     for i in range(0, t):
         s = get_strings()
         final = split_string(s)
-        print(final[0], final[1])
-
+        print(*final)
 main()
