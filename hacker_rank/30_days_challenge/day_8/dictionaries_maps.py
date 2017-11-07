@@ -30,4 +30,5 @@ def main():
     d = get_phones(n)
     repeating(d)
 
-main()
+if __name__ == "__main__":]
+    main()

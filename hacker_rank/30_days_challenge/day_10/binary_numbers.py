@@ -14,19 +14,21 @@ def dec_to_bin(n):
 
 def counting_bin(binary):
     total = 1
-    lista = []
+    total_list = []
     test = list(map(int, binary))
     for i in range(0, len(test) - 1):
         if (test[i] == 1) and (test[i+1] == 1):
             total += 1
-            lista.append(total)
+            total_list.append(total)
         else:
             total = 1
-            lista.append(total)
-    print(max(lista))
+            total_list.append(total)
+    print(max(total_list))
 
 def main():
     n = get_entry()
     binary = dec_to_bin(n)
     counting_bin(binary)
-main()
+
+if __name__ == "__main__":
+    main()
