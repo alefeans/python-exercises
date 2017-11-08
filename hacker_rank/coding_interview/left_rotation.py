@@ -1,11 +1,8 @@
 #!/usr/bin/python3.6
 import sys
 
-def array_left_rotation(k, a):
-    b = a[0:k]
-    del(a[0:k])
-    a.extend(b)
-    return a
+def array_left_rotation(n, k, a):
+    return a[k:] + a[:k]
 
 def validator(n, k, a):
     if (n < 1) and (n > 10**5):
