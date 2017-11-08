@@ -1,4 +1,4 @@
-# Becoming a Pythonista
+# Becoming a Pythonista !
 
 Neste repositório, irei acrescentar alguns códigos feitos por mim para resolver alguns desafios do Hacker Rank (entre outras plataformas), exercícios de livros que ando lendo e etc.
 
