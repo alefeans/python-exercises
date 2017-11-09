@@ -1,39 +1,35 @@
 #!/usr/bin/python3.6
 import sys
 
-# It worked on my machine. So, i don't give a...
-
-def get_entry():
-    n = int(input().strip())
-    if  (n < 1) and (n > 100):
+def validate_entry():
+    n = int(input())
+    if (n < 1) and (n > 100):
         sys.exit(1)
     else:
         return n
 
-def get_socks(n):
-    socks = []
-    for i in range(0, n):
-        c = int(input().strip())
-        if (c < 1) and (c > 100):
-            sys.exit(1)
-        else:
-            socks.append(c)
-    return socks
+def validate_socks(n):
+    c = [int(i) for i in input().split()]
+    if (len(c) > n):
+        sys.exit(1)
+    if (min(c) < 1) and (max(c) > 100):
+        sys.exit(1)
+    else:
+        return c
 
-def operations(socks):
-    socks.sort()
+def get_pairs(c):
+    b = list(set(c))
     total = 0
-    for i in range(0, len(socks), 2):
-        if ((i + 1) == len(socks)):
-            return total
-        elif socks[i] == socks[i+1]:
-            total += 1
-        else:
-            continue
-def main():
-    n = get_entry()
-    socks = get_socks(n)
-    total = operations(socks)
+    for i in range(0, len(b)):
+        t = c.count(b[i])
+        total += t // 2
     print(total)
+
+
+
+def main():
+    n = validate_entry()
+    c = validate_socks(n)
+    get_pairs(c)
 
 main()
