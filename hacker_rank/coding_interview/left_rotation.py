@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 
-def array_left_rotation(n, k, a):
+def array_left_rotation(k, a):
     return a[k:] + a[:k]
 
 def validator(n, k, a):
