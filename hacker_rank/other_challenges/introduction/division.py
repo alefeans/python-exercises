@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3
 if __name__ == '__main__':
     a = int(input())
     b = int(input())

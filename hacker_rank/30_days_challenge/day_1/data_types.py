@@ -1,28 +1,17 @@
-#!/usr/bin/python3.6
-import sys
-# Second day challenge
+#!/usr/bin/python3
 
-def maximumToys(prices, k):
-    i = 0
-    prices.sort()
-    for x in range(len(prices)):
-        if k < prices[x]:
-            continue
-        k -= prices[x]
-        i += 1
-    return i
-
-
-if __name__ == "__main__":
-    n, k = input().strip().split(' ')
-    n, k = [int(n), int(k)]
-    prices = list(map(int, input().strip().split(' ')))
-    if (1 > n) or (n > 10**5):
-        sys.exit(1)
-    if (1 > k) or (k > 10**9):
-        sys.exit(1)
-    for a in range(len(prices)):
-        if (1 > prices[a]) or (prices[a] > 10**9):
-            sys.exit(1)
-    result = maximumToys(prices, k)
-    print(result)
+# Declare second integer, double, and String variables.
+a = 0
+b = 0.0
+c = ''
+# Read and save an integer, double, and String to your variables.
+a = int(input())
+b = float(input())
+c = input()
+# Print the sum of both integer variables on a new line.
+print(i + a)
+# Print the sum of the double variables on a new line.
+print(d + b)
+# Concatenate and print the String variables on a new line
+# The 's' variable above should be printed first.
+print(s + c)

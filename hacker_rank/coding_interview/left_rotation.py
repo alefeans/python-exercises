@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3
 import sys
 
 def array_left_rotation(n, k, a):

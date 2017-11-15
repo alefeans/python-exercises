@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3
 import sys
 
 # Valida se a quantidade de testes está ok (1 até 10 testes)
