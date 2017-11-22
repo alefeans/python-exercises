@@ -23,7 +23,7 @@ def get_strings():
 def split_string(s):
     even = ""
     odd = ""
-    for i in range(0, len(s)):
+    for i in range(len(s)):
         if (i % 2 == 0):
             even += s[i]
         else:
@@ -33,7 +33,7 @@ def split_string(s):
 
 def main():
     t = get_entry()
-    for i in range(0, t):
+    for i in range(t):
         s = get_strings()
         final = split_string(s)
         print(*final)

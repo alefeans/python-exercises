@@ -9,14 +9,14 @@ def get_entry():
         return n
 
 def dec_to_bin(n):
-    binary = bin(n).split('0b')
-    return binary[1]
+    binary = bin(n)
+    return binary[2:]
 
 def counting_bin(binary):
     total = 1
     total_list = []
     test = list(map(int, binary))
-    for i in range(0, len(test) - 1):
+    for i in range(len(test) - 1):
         if (test[i] == 1) and (test[i+1] == 1):
             total += 1
             total_list.append(total)
