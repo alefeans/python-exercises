@@ -1,1 +1,1 @@
-I'll use pytest to test every single function in this section. TDD for the win.
+Como um objetivo adicional, irei utilizar o `pytest` em todos os módulos criados (*tdd for the win*).
