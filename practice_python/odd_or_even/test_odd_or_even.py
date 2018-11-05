@@ -11,8 +11,9 @@ class TestClass(object):
     def test_divisible_responses(self, number, expected):
         assert response(number) == expected
 
-    def test_if_number_is_disible_by_check(self):
-        assert divisible(2, 4) == "Yes, it's evenly divisible"
-
-    def test_if_number_is_not_divisible_by_check(self):
-        assert divisible(2, 3) != "Yes, it's evenly divisible"
+    @pytest.mark.parametrize("num, check, expected", [
+        (2, 4, "Yes, it's evenly divisible"),
+        (2, 3, "No, it's not evenly divisible")
+    ])
+    def test_if_number_is_disible_by_check(self, num, check, expected):
+        assert divisible(num, check) == expected
