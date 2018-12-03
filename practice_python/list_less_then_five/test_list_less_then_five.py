@@ -1,5 +1,11 @@
+import pytest
 from list_less_then_five import check_list
 
-def test_check_itens_less_then_five():
-    test_list = [1, 2, 5, 6]
-    assert check_list(test_list) == [1, 2]
+
+@pytest.mark.parametrize("sent, expected", [
+    ([1, 2, 5, 6], [1, 2]),
+    ([6, 7], []),
+    ([1], [1])
+])
+def test_check_itens_less_then_five(sent, expected):
+    assert check_list(sent) == expected

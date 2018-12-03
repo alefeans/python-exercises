@@ -3,6 +3,6 @@ def check_list(lista):
 
 
 if __name__ == "__main__":
-    l = input("Give me a list of numbers: ")
-    lista = list(map(int, l.split()))
+    entry = input("Give me a list of numbers: ")
+    lista = list(map(int, entry.split()))
     print(check_list(lista))

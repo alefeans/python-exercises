@@ -1,7 +1,8 @@
 import pytest
 from string_lists import is_palindrome
 
-@pytest.mark.parametrize("received,expected", [
+
+@pytest.mark.parametrize("received, expected", [
     ("radar", "Is palindrome"),
     ("bla", "Is not a palindrome")
 ])

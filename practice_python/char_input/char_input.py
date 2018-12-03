@@ -1,9 +1,10 @@
 import datetime
 
+
 def years(name, age):
     yrs = datetime.datetime.now()
-    yrs = (yrs.year - age ) + 100
-    return f"{name} will be 100 years old in {yrs}" 
+    yrs = (yrs.year - age) + 100
+    return f"{name} will be 100 years old in {yrs}"
 
 
 if __name__ == "__main__":

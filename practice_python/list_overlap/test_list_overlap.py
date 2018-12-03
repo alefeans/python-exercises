@@ -1,6 +1,11 @@
+import pytest
 from list_overlap import common_numbers
 
-def test_which_numbers_are_commons():
-    a = [1, 2, 3, 5]
-    b = [2, 5]
-    assert common_numbers(a, b) == {2, 5}
+
+@pytest.mark.parametrize("list_one, list_two, expected", [
+    ([1, 2, 3, 5], [2, 5], {2, 5}),
+    ([1, 2], [1], {1}),
+    ([1, 2], [3], set())
+])
+def test_which_numbers_are_commons(list_one, list_two, expected):
+    assert common_numbers(list_one, list_two) == expected

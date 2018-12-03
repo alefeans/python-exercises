@@ -6,6 +6,7 @@ def response(number):
     else:
         return "Odd"
 
+
 def divisible(num, check):
     if check % num == 0:
         return "Yes, it's evenly divisible"
