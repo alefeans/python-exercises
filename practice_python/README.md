@@ -1,1 +1,0 @@
-Como um objetivo adicional, irei utilizar o `pytest` em todos os módulos criados (*tdd for the win*).
