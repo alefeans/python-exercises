@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ```
 Then:
 ```
-pytest tests/
+pytest
 ```
 
 ## License
