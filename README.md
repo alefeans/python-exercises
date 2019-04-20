@@ -5,7 +5,7 @@ In this repo, i'll put some code challenges that i solved (and still solving), i
 
 ## Running the Code
 
-Until this commit, the code were all made using only the standard library, so the requirements are here just to the *tests*:
+Until this commit, the code were all made using only the standard library, so the requirements are here just for the *tests*:
 
 ```
 git clone https://github.com/alefeans/learning_python.git .
