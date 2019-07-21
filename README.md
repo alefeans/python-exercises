@@ -1,5 +1,5 @@
 # Python Exercises
-[![Build Status](https://travis-ci.org/alefeans/python_exercises.svg?branch=master)](https://travis-ci.org/alefeans/python_exercises) [![codecov](https://codecov.io/gh/alefeans/learning_python/branch/master/graph/badge.svg)](https://codecov.io/gh/alefeans/learning_python) [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE) [![Python](https://img.shields.io/badge/python-3.6-blue.svg)]()
+[![Build Status](https://travis-ci.org/alefeans/python_exercises.svg?branch=master)](https://travis-ci.org/alefeans/python_exercises) [![codecov](https://codecov.io/gh/alefeans/python_exercises/branch/master/graph/badge.svg)](https://codecov.io/gh/alefeans/learning_python) [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE) [![Python](https://img.shields.io/badge/python-3.6-blue.svg)]()
 
 Here you'll find some challenges and exercises that i solved (and still solving), in many platforms ([hackerhank](https://www.hackerrank.com/), [practice python](https://www.practicepython.org/), [project euler](https://projecteuler.net/) and some programming books exercises).
 
