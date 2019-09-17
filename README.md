@@ -8,7 +8,7 @@ Here you'll find some challenges and exercises that i solved (and still solving)
 Until this commit, the code were all made using only the standard library, so the requirements are here just for the *tests*:
 
 ```
-git clone https://github.com/alefeans/python_exercises.git .
+git clone https://github.com/alefeans/python-exercises.git .
 python {platform}/{challenge}/{challenge}.py
 ```
 
