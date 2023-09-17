@@ -1,5 +1,7 @@
 import sys
 from person import Person
+
+
 class Student(Person):
     #   Class Constructor
     #
@@ -19,6 +21,7 @@ class Student(Person):
             sys.exit(1)
         elif (len(self.scores) < 0) and (len(self.scores) > 100):
             sys.exit(1)
+
     #   Function Name: calculate
     #   Return: A character denoting the grade.
     #
@@ -27,15 +30,15 @@ class Student(Person):
         result = sum(self.scores) / len(self.scores)
         letter = ""
         if (result > 89) and (result < 101):
-            letter = 'O'
+            letter = "O"
         elif (result > 79) and (result < 90):
-            letter = 'E'
+            letter = "E"
         elif (result > 69) and (result < 80):
-            letter = 'A'
+            letter = "A"
         elif (result > 54) and (result < 70):
-            letter = 'P'
+            letter = "P"
         elif (result > 39) and (result < 55):
-            letter = 'D'
+            letter = "D"
         else:
-            letter = 'T'
+            letter = "T"
         return letter

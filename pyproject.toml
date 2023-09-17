@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "python-exercises"
+version = "0.1.0"
+description = "Code challenges/exercises in Python"
+authors = ["alefeans <alefeans2@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.1"
+pytest-watch = "^4.2.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+mypy = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 95
+
+[tool.ruff]
+line-length = 95
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+filterwarnings = "ignore::DeprecationWarning"

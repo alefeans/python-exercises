@@ -1,7 +1,7 @@
 # Python Exercises
-[![Build Status](https://travis-ci.org/alefeans/python-exercises.svg?branch=master)](https://travis-ci.org/alefeans/python-exercises) [![codecov](https://codecov.io/gh/alefeans/python-exercises/branch/master/graph/badge.svg)](https://codecov.io/gh/alefeans/python-exercises) [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE) [![Python](https://img.shields.io/badge/python-3.6-blue.svg)]()
+[![codecov](https://codecov.io/gh/alefeans/python-exercises/branch/master/graph/badge.svg)](https://codecov.io/gh/alefeans/python-exercises) [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE) [![Python](https://img.shields.io/badge/python-3.6-blue.svg)]()
 
-Here you'll find code challenges that I solved in some platforms like [hackerhank](https://www.hackerrank.com/), [practice python](https://www.practicepython.org/), [project euler](https://projecteuler.net/), and some programming books exercises.
+Here you'll find code challenges that I solved across various platforms like [Hackerhank](https://www.hackerrank.com/), [Practice Python](https://www.practicepython.org/), [Project Euler](https://projecteuler.net/), some programming book exercises (e.g [Elements of Programming Interviews](http://elementsofprogramminginterviews.com/)), and [others](others/).
 
 ## Running the Code
 
@@ -14,15 +14,18 @@ python {platform}/{challenge}/{challenge}.py
 
 ## Tests
 
-To run the unit tests, you'll need to:
+Activate your Python virtual environment and run:
+
 ```
-pip install pytest
+poetry install
+
+# or
+
+pip install .
 ```
-or:
-```
-pip install -r requirements.txt
-```
+
 Then:
+
 ```
 pytest
 ```

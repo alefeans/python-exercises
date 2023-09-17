@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import sys
+
 # Second day challenge
+
 
 def maximumToys(prices, k):
     i = 0
@@ -14,9 +16,9 @@ def maximumToys(prices, k):
 
 
 if __name__ == "__main__":
-    n, k = input().strip().split(' ')
+    n, k = input().strip().split(" ")
     n, k = [int(n), int(k)]
-    prices = list(map(int, input().strip().split(' ')))
+    prices = list(map(int, input().strip().split(" ")))
     if (1 > n) or (n > 10**5):
         sys.exit(1)
     if (1 > k) or (k > 10**9):

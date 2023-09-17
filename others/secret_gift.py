@@ -1,0 +1,28 @@
+"""
+Given a list of players, pair up players so that:
+
+1. Each player gives a gift once
+2. Each player receives a gift once
+3. Players cannot give or receive to themselves
+4. Selections must be random
+
+Input: ['Alice', 'Bob', 'Michael', 'Renna']
+Output: [['Alice', 'Bob'], ['Bob', 'Michael'], ['Michael', 'Renna'], ['Renna', 'Alice']]
+"""
+import random
+from typing import List
+
+
+def secret_gift(players: List[str]) -> List[List[str]]:
+    resp = []
+    random.shuffle(players)
+
+    for i, player in enumerate(players):
+        if i == len(players) - 1:
+            resp.append([player, players[0]])
+        else:
+            resp.append([player, players[i + 1]])
+    return resp
+
+
+print(secret_gift(["Alice", "Bob", "Michael", "Renna"]))

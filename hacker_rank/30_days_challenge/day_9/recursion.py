@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def factorial(n):
     if n == 0:
         return 0
@@ -8,6 +9,7 @@ def factorial(n):
         return 1
     if n > 1:
         return factorial(n - 1) * n
+
 
 if __name__ == "__main__":
     n = int(input().strip())

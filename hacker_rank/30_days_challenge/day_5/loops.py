@@ -7,4 +7,4 @@ if (n < 2) or (n > 20):
 else:
     for i in range(1, 11):
         t = i * n
-        print(n, "x" , i , "=" , t)
+        print(n, "x", i, "=", t)

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 # Valida se a quantidade de testes está ok (1 até 10 testes)
 def get_entry():
     t = int(input().strip())
@@ -8,6 +9,7 @@ def get_entry():
         sys.exit(1)
     else:
         return t
+
 
 # Valida se a string informada possui o tamanho correto (2 até 10000)
 def get_strings():
@@ -17,6 +19,7 @@ def get_strings():
     else:
         return s
 
+
 # Faz uma iteração na string informada, incluindo os caracteres pares na "lista" par
 # (even) e os caracteres ímpares na "lista" impar (odd). Ao final, inclui a "lista" par
 # no índice 0 e inclui a "lista" impar no índice 1 da "lista" final.
@@ -24,12 +27,13 @@ def split_string(s):
     even = ""
     odd = ""
     for i in range(len(s)):
-        if (i % 2 == 0):
+        if i % 2 == 0:
             even += s[i]
         else:
             odd += s[i]
     final = even, odd
     return final
+
 
 def main():
     t = get_entry()
@@ -37,4 +41,6 @@ def main():
         s = get_strings()
         final = split_string(s)
         print(*final)
+
+
 main()
