@@ -18,10 +18,8 @@ def secret_gift(players: List[str]) -> List[List[str]]:
     random.shuffle(players)
 
     for i, player in enumerate(players):
-        if i == len(players) - 1:
-            resp.append([player, players[0]])
-        else:
-            resp.append([player, players[i + 1]])
+        previous = i % len(players) - 1
+        resp.append([players[previous], player])
     return resp
 
 
