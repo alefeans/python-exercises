@@ -1,26 +1,19 @@
-from typing import Callable, List
+from typing import Callable, Deque, List
 
 """
 Build a function that returns the tip of the day:
 - You have a list of tips in memory;
-
-I've seen three generalizations of this problem:
 - Return a new tip everytime an user asks for it;
-- Return the same tip for the entire day, but:
-    - You can't repeat the same tip for two consecutive days;
-    - We don't have a tip for each day (so no monday -> tip1, tuesday -> tip2 solution here);
-- Make a request to https://frog.tips and get only the ID and the tip itself of every tip
 """
 
-
 """ 
-For the first problem, a possible solution would be using a curried function that has an 
-internal state index to control the access of the tips in the list that gets reseted to 0
+A possible solution using FP would be using a curried function that has an internal
+state index to control the access of the tips in the list that gets reseted to 0
 when it becomes bigger than the list length
 """
 
 
-def first_get_tip_of_the_day(tips: List[str]) -> Callable[[], List[str]]:
+def get_tip_of_the_day_fp(tips: List[str]) -> Callable[[], List[str]]:
     index = -1
 
     def inner():
@@ -31,8 +24,7 @@ def first_get_tip_of_the_day(tips: List[str]) -> Callable[[], List[str]]:
     return inner
 
 
-tips = ["a", "b", "z", "d", "c"]
-get_tip = first_get_tip_of_the_day(tips)
+get_tip = get_tip_of_the_day_fp(["a", "b", "z", "d", "c"])
 get_tip()  # a
 get_tip()  # b
 get_tip()  # z
@@ -42,7 +34,38 @@ get_tip()  # a
 get_tip()  # b
 
 """
-For the second problem, a possible solution would be having a function that receives
-the unix timestamp of the day and maps it to an index of the list, so we will
-always return the same tip for the same day, and it will change in the next day
+Another solution would be rotating a collections.deque and returning the first item
 """
+from collections import deque
+
+
+def get_tip_of_the_day_deque(tips: Deque[str]) -> str:
+    tips.rotate()
+    return tips[0]
+
+
+tips_deque = deque(["a", "b", "z", "d", "c"])
+get_tip_of_the_day_deque(tips_deque)  # c
+get_tip_of_the_day_deque(tips_deque)  # d
+get_tip_of_the_day_deque(tips_deque)  # z
+get_tip_of_the_day_deque(tips_deque)  # b
+get_tip_of_the_day_deque(tips_deque)  # a
+get_tip_of_the_day_deque(tips_deque)  # c
+get_tip_of_the_day_deque(tips_deque)  # d
+get_tip_of_the_day_deque(tips_deque)  # z
+
+
+"""
+Another one, using a cycle:
+"""
+from itertools import cycle
+
+tips_cycle = cycle(["a", "b", "z", "d", "c"])
+next(tips_cycle)  # a
+next(tips_cycle)  # b
+next(tips_cycle)  # z
+next(tips_cycle)  # d
+next(tips_cycle)  # c
+next(tips_cycle)  # a
+next(tips_cycle)  # b
+next(tips_cycle)  # z
