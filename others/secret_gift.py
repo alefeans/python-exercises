@@ -23,4 +23,5 @@ def secret_gift(players: List[str]) -> List[List[str]]:
     return resp
 
 
-print(secret_gift(["Alice", "Bob", "Michael", "Renna"]))
+if __name__ == "__main__":
+    print(secret_gift(["Alice", "Bob", "Michael", "Renna"]))
