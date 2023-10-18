@@ -151,34 +151,50 @@ def is_bst(tree: Node | None) -> bool:
     return dfs(tree, -float("inf"), float("inf"))
 
 
+def lca(tree: Node | None, p: int, q: int) -> Any:
+    if not tree:
+        return -1
+    if p < tree.value and q < tree.value:
+        return lca(tree.left, p, q)
+    elif p > tree.value and q > tree.value:
+        return lca(tree.right, p, q)
+    return tree.value
+
+
 if __name__ == "__main__":
-    path = Node("/")
-    path.left = Node("bar")
-    path.left.left = Node("zee")
-    path.right = Node("baz")
-    path.right.right = Node("foo")
-    path.right.right.right = Node("bla")
+    # path = Node("/")
+    # path.left = Node("bar")
+    # path.left.left = Node("zee")
+    # path.right = Node("baz")
+    # path.right.right = Node("foo")
+    # path.right.right.right = Node("bla")
     # pretty_print_path(path)
 
-    left_subtree = Node(4)
-    left_leaf, right_leaf = Node(3), Node(8)
-    left_subtree.left = left_leaf
-    left_subtree.right = right_leaf
+    # left_subtree = Node(4)
+    # left_leaf, right_leaf = Node(3), Node(8)
+    # left_subtree.left = left_leaf
+    # left_subtree.right = right_leaf
 
-    tree = Node(5)
-    tree.right = Node(6)
-    tree.left = left_subtree
+    # tree = Node(5)
+    # tree.right = Node(6)
+    # tree.left = left_subtree
     # print(serialize(tree))
     # print(serialize(deserialize(serialize(tree))))
     # print(serialize(invert(tree)))
 
-    bst = Node(7)
-    insert(bst, 2)
-    insert(bst, 5)
-    insert(bst, 3)
-    insert(bst, 6)
-    insert(bst, 11)
-    insert(bst, 9)
-    insert(bst, 14)
-    insert(bst, 13)
+    # bst = Node(7)
+    # insert(bst, 2)
+    # insert(bst, 5)
+    # insert(bst, 3)
+    # insert(bst, 6)
+    # insert(bst, 11)
+    # insert(bst, 9)
+    # insert(bst, 14)
+    # insert(bst, 13)
     # print(is_bst(bst))
+
+    lca_ex = Node(6)
+    insert(lca_ex, 2)
+    insert(lca_ex, 8)
+
+    print(lca(lca_ex, 2, 8))
