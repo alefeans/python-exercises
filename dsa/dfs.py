@@ -1,14 +1,14 @@
-from typing import Any
+from typing import Any, Optional
 
 
 class Node:
     def __init__(self, value, left=None, right=None):
         self.value = value
-        self.left: Node | None = left
-        self.right: Node | None = right
+        self.left: Optional[Node] = left
+        self.right: Optional[Node] = right
 
 
-def find_target(root: Node | None, target: int) -> None | Node:
+def find_target(root: Optional[Node], target: int) -> None | Node:
     if root is None:
         return None
 
@@ -18,8 +18,8 @@ def find_target(root: Node | None, target: int) -> None | Node:
     return find_target(root.left, target) or find_target(root.right, target)
 
 
-def pretty_print_path(root: Node | None) -> None:
-    def dfs(root: Node | None, ident: str = "") -> None:
+def pretty_print_path(root: Optional[Node]) -> None:
+    def dfs(root: Optional[Node], ident: str = "") -> None:
         if not root:
             return None
 
@@ -31,15 +31,15 @@ def pretty_print_path(root: Node | None) -> None:
     return dfs(root)
 
 
-def greatest_value(root: Node | None) -> Any:
+def greatest_value(root: Optional[Node]) -> Any:
     if not root:
         return -float("inf")
 
     return max(root.value, greatest_value(root.left), greatest_value(root.right))
 
 
-def tree_max_depth(root: Node | None) -> int:
-    def dfs(root: Node | None) -> int:
+def tree_max_depth(root: Optional[Node]) -> int:
+    def dfs(root: Optional[Node]) -> int:
         if not root:
             return 0
 
@@ -48,8 +48,8 @@ def tree_max_depth(root: Node | None) -> int:
     return dfs(root) - 1 if root else 0
 
 
-def visible_nodes_count(root: Node | None) -> int:
-    def dfs(root: Node | None, greatest: float) -> int:
+def visible_nodes_count(root: Optional[Node]) -> int:
+    def dfs(root: Optional[Node], greatest: float) -> int:
         if not root:
             return 0
 
@@ -65,8 +65,8 @@ def visible_nodes_count(root: Node | None) -> int:
     return dfs(root, -float("inf")) if root else 0
 
 
-def is_balanced_tree(root: Node | None) -> bool:
-    def dfs(root: Node | None) -> int:
+def is_balanced_tree(root: Optional[Node]) -> bool:
+    def dfs(root: Optional[Node]) -> int:
         if not root:
             return 0
 
@@ -83,7 +83,7 @@ def is_balanced_tree(root: Node | None) -> bool:
     return dfs(root) != -1
 
 
-def serialize(root: Node | None) -> str:
+def serialize(root: Optional[Node]) -> str:
     if not root:
         return "x"
 
@@ -108,7 +108,7 @@ def deserialize(s):
     return dfs(iter(s.split()))
 
 
-def invert(root: Node | None) -> Node | None:
+def invert(root: Optional[Node]) -> Optional[Node]:
     # one-liner creating a new Node every time
     # return Node(root.value, invert(root.right), invert(root.left)) if root else None
 
@@ -117,7 +117,7 @@ def invert(root: Node | None) -> Node | None:
     return root
 
 
-def find(root: Node | None, val: int) -> bool:
+def find(root: Optional[Node], val: int) -> bool:
     if not root:
         return False
     if root.value == val:
@@ -138,8 +138,8 @@ def insert(tree, val):
     return tree
 
 
-def is_bst(tree: Node | None) -> bool:
-    def dfs(tree: Node | None, min_value: float, max_value: float) -> bool:
+def is_bst(tree: Optional[Node]) -> bool:
+    def dfs(tree: Optional[Node], min_value: float, max_value: float) -> bool:
         if not tree:
             return True
 
@@ -151,7 +151,7 @@ def is_bst(tree: Node | None) -> bool:
     return dfs(tree, -float("inf"), float("inf"))
 
 
-def lca(tree: Node | None, p: int, q: int) -> Any:
+def lca(tree: Optional[Node], p: int, q: int) -> Any:
     if not tree:
         return -1
     if p < tree.value and q < tree.value:
