@@ -8,7 +8,7 @@ class Node:
         self.right: Optional[Node] = right
 
 
-def find_target(root: Optional[Node], target: int) -> None | Node:
+def find_target(root: Optional[Node], target: int) -> Optional[Node]:
     if root is None:
         return None
 
@@ -18,17 +18,14 @@ def find_target(root: Optional[Node], target: int) -> None | Node:
     return find_target(root.left, target) or find_target(root.right, target)
 
 
-def pretty_print_path(root: Optional[Node]) -> None:
-    def dfs(root: Optional[Node], ident: str = "") -> None:
-        if not root:
-            return None
+def pretty_print_path(root: Optional[Node], ident: str = "") -> None:
+    if not root:
+        return None
 
-        print(f"{ident}{root.value}")
-        next_ident = ident + "  "
-        dfs(root.left, next_ident)
-        dfs(root.right, next_ident)
-
-    return dfs(root)
+    print(f"{ident}{root.value}")
+    next_ident = ident + "  "
+    pretty_print_path(root.left, next_ident)
+    pretty_print_path(root.right, next_ident)
 
 
 def greatest_value(root: Optional[Node]) -> Any:
