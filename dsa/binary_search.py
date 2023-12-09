@@ -69,16 +69,17 @@ def plates_between_candles(string, queries):
 
 
 if __name__ == "__main__":
-    print(bool_binary_search([False, False, False, False, True, True]))
+    # print(bool_binary_search([False, False, False, False, True, True]))
 
-    print(first_not_smaller([2, 3, 5, 7, 11, 13, 17, 19], 6))
+    # print(first_not_smaller([2, 3, 5, 7, 11, 13, 17, 19], 6))
 
-    print(find_first_ocurrence([2, 3, 5, 7, 11], 2))
+    # print(find_first_ocurrence([2, 3, 5, 7, 11], 2))
 
-    print(find_min_in_rotated_array([30, 40, 50, 10, 20]))
-    print(find_min_in_rotated_array([2, 3, 4, 5, 1]))
-    print(find_min_in_rotated_array([60, 1, 2, 40, 50]))
+    # print(find_min_in_rotated_array([30, 40, 50, 10, 20]))
+    # print(find_min_in_rotated_array([2, 3, 4, 5, 1]))
+    # print(find_min_in_rotated_array([60, 1, 2, 40, 50]))
 
-    string = "***|**|*****|**||**|*"
-    queries = [[1, 17], [4, 5], [14, 17], [5, 11], [15, 16]]
-    print(plates_between_candles(string, queries))
+    # string = "***|**|*****|**||**|*"
+    # queries = [[1, 17], [4, 5], [14, 17], [5, 11], [15, 16]]
+    # print(plates_between_candles(string, queries))
+    pass

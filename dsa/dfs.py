@@ -190,8 +190,9 @@ if __name__ == "__main__":
     # insert(bst, 13)
     # print(is_bst(bst))
 
-    lca_ex = Node(6)
-    insert(lca_ex, 2)
-    insert(lca_ex, 8)
+    # lca_ex = Node(6)
+    # insert(lca_ex, 2)
+    # insert(lca_ex, 8)
 
-    print(lca(lca_ex, 2, 8))
+    # print(lca(lca_ex, 2, 8))
+    pass
