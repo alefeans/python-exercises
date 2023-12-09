@@ -4,7 +4,7 @@ class ListNode:
         self.next = next
 
 
-def reverseList(head):
+def reverse_list(head):
     prev = None
 
     while head:
@@ -14,12 +14,30 @@ def reverseList(head):
     return prev
 
 
-if __name__ == "__main__":
-    linked_list = ListNode(1)
-    linked_list.next = ListNode(2)
-    linked_list.next.next = ListNode(3)
+def merge_two_lists(self, list1, list2):
+    head = ListNode()
+    curr = head
 
-    linked_list = reverseList(linked_list)
-    while linked_list:
-        print(linked_list.val)
-        linked_list = linked_list.next
+    while list1 and list2:
+        if list1.val < list2.val:
+            curr.next = list1
+            list1 = list1.next
+        else:
+            curr.next = list2
+            list2 = list2.next
+        curr = curr.next
+
+    curr.next = list1 or list2
+    return head.next
+
+
+if __name__ == "__main__":
+    # linked_list = ListNode(1)
+    # linked_list.next = ListNode(2)
+    # linked_list.next.next = ListNode(3)
+
+    # linked_list = reverse_list(linked_list)
+    # while linked_list:
+    #     print(linked_list.val)
+    #     linked_list = linked_list.next
+    pass
