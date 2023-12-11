@@ -14,7 +14,7 @@ In this case, two unique pages means two unique pages overall
 """
 from collections import defaultdict
 from pathlib import Path
-from typing import DefaultDict, List, Set
+from typing import DefaultDict, Iterator, List, Set
 
 CURRENT_PATH = Path("others/loyal_customers")
 
@@ -43,17 +43,22 @@ def get_day_one_visitors() -> DefaultDict[str, Set[str]]:
     return day_one_visitors
 
 
+def get_day_two_accesses() -> Iterator[str]:
+    with open(CURRENT_PATH / "log_day_two.txt", "r") as log_day_two:
+        for access in log_day_two:
+            yield access
+
+
 def get_loyal_customers(visitors: DefaultDict[str, Set[str]]) -> List[str]:
     loyal_customers = []
-    with open(CURRENT_PATH / "log_day_two.txt", "r") as log_day_two:
-        for day_two_access in log_day_two:
-            day_two_user, day_two_page = get_user_and_page(day_two_access)
-            if day_two_user in visitors:
-                accessed_pages = visitors[day_two_user]
-                if len(accessed_pages) > 1 or day_two_page not in accessed_pages:
-                    loyal_customers.append(day_two_user)
-                    # we already found a loyal user, so we can delete it from visitors
-                    del visitors[day_two_user]
+    for day_two_access in get_day_two_accesses():
+        day_two_user, day_two_page = get_user_and_page(day_two_access)
+        if day_two_user in visitors:
+            accessed_pages = visitors[day_two_user]
+            if len(accessed_pages) > 1 or day_two_page not in accessed_pages:
+                loyal_customers.append(day_two_user)
+                # we already found a loyal user, so we can delete it from visitors
+                del visitors[day_two_user]
 
     return loyal_customers
 
